@@ -16,7 +16,8 @@ env/
 .ipynb_checkpoints/
 
 # Data files (optional - if large)
-data/*.csv
+data/raw/
+data/cleaned/
 
 # Model files
 *.pkl
