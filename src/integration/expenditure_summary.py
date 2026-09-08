@@ -4,6 +4,13 @@ exp = pd.read_csv(
     "data/cleaned/Expenditure on Completed and On-going Works as on Date_clean.csv"
 )
 
+exp["fund_disbursed_amount__₹_"] = pd.to_numeric(
+    exp["fund_disbursed_amount__₹_"],
+    errors="coerce"
+)
+
+print(exp["fund_disbursed_amount__₹_"].dtype)
+
 summary = (
     exp.groupby("project_id")
     .agg(
