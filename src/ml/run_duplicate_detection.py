@@ -3,13 +3,17 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 
 import pandas as pd
 
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 from src.ml.duplicate_detection import detect_duplicates, save_vectorizer
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_INPUT = PROJECT_ROOT / "data" / "cleaned" / "master_projects.csv"
 DEFAULT_OUTPUT = PROJECT_ROOT / "data" / "processed" / "duplicate_outputs.csv"
 DEFAULT_VECTORIZER = PROJECT_ROOT / "models" / "tfidf_vectorizer.joblib"
