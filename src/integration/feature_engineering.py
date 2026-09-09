@@ -39,9 +39,9 @@ df["completed_flag"] = (
 # --------------------------------------------------
 
 numeric_cols = [
-    "recommended_amount____₹_",
-    "sanction_amount__₹_",
-    "amount_disbursed__₹_",
+    "recommended_amount",
+    "sanction_amount",
+    "amount_disbursed",
     "total_expenditure",
     "payment_count"
 ]
@@ -59,7 +59,7 @@ for col in numeric_cols:
 
 df["fund_utilization"] = (
     df["total_expenditure"] /
-    df["sanction_amount__₹_"]
+    df["sanction_amount"]
 )
 
 # --------------------------------------------------
@@ -68,7 +68,7 @@ df["fund_utilization"] = (
 
 df["expenditure_ratio"] = (
     df["total_expenditure"] /
-    df["recommended_amount____₹_"]
+    df["recommended_amount"]
 )
 
 # --------------------------------------------------
@@ -87,7 +87,7 @@ df["project_age_days"] = (
 
 df["over_budget"] = (
     df["total_expenditure"] >
-    df["sanction_amount__₹_"]
+    df["sanction_amount"]
 ).astype(int)
 
 # --------------------------------------------------
