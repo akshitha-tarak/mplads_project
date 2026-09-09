@@ -53,6 +53,10 @@ for col in numeric_cols:
             errors="coerce"
         )
 
+for col in ["sanction_amount", "recommended_amount", "total_expenditure"]:
+    if col not in df.columns:
+        df[col] = pd.NA
+
 # --------------------------------------------------
 # Fund Utilization
 # --------------------------------------------------

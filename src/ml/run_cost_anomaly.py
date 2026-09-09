@@ -3,13 +3,17 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 
 import pandas as pd
 
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 from src.ml.cost_anomaly import detect_cost_anomalies, save_model
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_INPUT = PROJECT_ROOT / "data" / "cleaned" / "master_projects.csv"
 DEFAULT_OUTPUT = PROJECT_ROOT / "data" / "processed" / "cost_anomaly_outputs.csv"
 DEFAULT_MODEL = PROJECT_ROOT / "models" / "cost_isolation_forest.joblib"
