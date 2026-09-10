@@ -2,3 +2,7 @@ joblib
 pandas
 scikit-learn
 pytest
+fastapi
+uvicorn
+httpx
+pydantic

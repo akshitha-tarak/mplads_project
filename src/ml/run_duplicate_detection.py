@@ -31,7 +31,7 @@ def run_duplicate_detection(
     if not input_path.exists():
         raise FileNotFoundError(
             f"Master file not found: {input_path}. "
-            "Run all cells in notebooks/datapreprocessing.ipynb first."
+            "Run python -m src.preprocessing.datapreprocessing first."
         )
 
     projects = pd.read_csv(input_path)
